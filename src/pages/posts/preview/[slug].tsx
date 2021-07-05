@@ -16,7 +16,7 @@ interface PostPreviewProps {
         title: string;
         content: string;
         updatedAt: string;
-    }
+    };
 }
 
 export default function PostPreview({ post }: PostPreviewProps) {
@@ -26,7 +26,7 @@ export default function PostPreview({ post }: PostPreviewProps) {
         if(session?.activeSubscription) {
             router.push(`/posts/${post.slug}`)
         }
-    }, [ session ])
+    }, [session])
     return (
         <> 
             <Head>
@@ -82,6 +82,7 @@ export const  getStaticProps: GetStaticProps = async ({ params }) => {
    return {
        props: {
            post,
-       }
+       },
+       redirect: 60 * 30,
    }
 }

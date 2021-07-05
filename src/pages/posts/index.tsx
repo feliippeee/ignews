@@ -13,7 +13,7 @@ type Post = {
     updatedAt: string;
 }
 interface PostsProps {
-    posts: Post[];
+    posts: Post[]
 
 }
 
@@ -68,7 +68,6 @@ export const getStaticProps: GetStaticProps = async () => {
     return { 
         props: {
             posts
-        },
-        redirect: 60 * 30, //atualizado a cada 30 minutos
+        }
     }
 }
